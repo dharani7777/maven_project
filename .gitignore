@@ -1,0 +1,7 @@
+target/
+*.class
+*.log
+*.jar
+.idea/  # For IntelliJ IDEA specific settings
+*.iml   # IntelliJ project file
+.vscode/  # For Visual Studio Code settings
