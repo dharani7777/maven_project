@@ -13,8 +13,8 @@ jobs:
 
     - name: Build with Maven
       run: mvn clean install
-      working-directory: ./maven-project  # Make sure this matches the directory where pom.xml is located
+      working-directory: C:\Users\saidh\my-app\maven-project  # Make sure this matches the directory where pom.xml is located
 
     - name: Run tests
       run: mvn test
-      working-directory: ./maven-project  # Repeat the correct directory here
+      working-directory:C:\Users\saidh\my-app\maven-project  # Repeat the correct directory here
