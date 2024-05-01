@@ -1,0 +1,104 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.mycompany.app</groupId>
+    <artifactId>my-app</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>My App</name>
+    <url>http://maven.apache.org</url>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- Other dependencies can be added here -->
+    </dependencies>
+
+    <profiles>
+        <!-- Profile for Java 8 -->
+        <profile>
+            <id>java8</id>
+            <activation>
+                <jdk>1.8</jdk>
+            </activation>
+            <properties>
+                <maven.compiler.source>1.8</maven.compiler.source>
+                <maven.compiler.target>1.8</maven.compiler.target>
+            </properties>
+        </profile>
+
+        <!-- Profile for Java 11 -->
+        <profile>
+            <id>java11</id>
+            <activation>
+                <jdk>11</jdk>
+            </activation>
+            <properties>
+                <maven.compiler.source>11</maven.compiler.source>
+                <maven.compiler.target>11</maven.compiler.target>
+            </properties>
+        </profile>
+
+        <!-- Profile for Java 14 -->
+        <profile>
+            <id>java14</id>
+            <activation>
+                <jdk>14</jdk>
+            </activation>
+            <properties>
+                <maven.compiler.source>14</maven.compiler.source>
+                <maven.compiler.target>14</maven.compiler.target>
+            </properties>
+        </profile>
+
+        <!-- Profile for Java 17 -->
+        <profile>
+            <id>java17</id>
+            <activation>
+                <jdk>17</jdk>
+            </activation>
+            <properties>
+                <maven.compiler.source>17</maven.compiler.source>
+                <maven.compiler.target>17</maven.compiler.target>
+            </properties>
+        </profile>
+    </profiles>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                </configuration>
+            </plugin>
+            <!-- Other plugins like maven-jar-plugin, maven-deploy-plugin etc. can be added here -->
+        </plugins>
+    </build>
+
+    <distributionManagement>
+        <repository>
+            <id>release-repo</id>
+            <name>Release Repository</name>
+            <url>http://localhost:8082/repository/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshot-repo</id>
+            <name>Snapshot Repository</name>
+            <url>http://localhost:8082/repository/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <!-- Additional configurations like reporting, SCM etc. can be added here -->
+</project>
