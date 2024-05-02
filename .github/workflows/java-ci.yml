@@ -13,8 +13,8 @@ jobs:
 
     - name: Build with Maven
       run: mvn clean install
-      working-directory: C:\Users\saidh\my-app  # Make sure this matches the directory where pom.xml is located
+      working-directory: /home/runner/work/my-app/my-app  # Adjusted to Unix-style path
 
     - name: Run tests
       run: mvn test
-      working-directory:C:\Users\saidh\my-app # Repeat the correct directory here
+      working-directory: /home/runner/work/my-app/my-app  # Adjusted to Unix-style path
